@@ -5,6 +5,10 @@ from flask import request
 
 app = flask.Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def say_hello():
+  return "<h3>Welcome to the demo app</h3>", 200
+
 @app.route('/<string:text>', methods=['GET'])
 def echo(text):
   return "<h3>You wrote:</h3>%s" % text, 200
